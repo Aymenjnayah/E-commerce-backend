@@ -1,0 +1,155 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My User Project ",
+        "description": "My User Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Customers",
+            "description": "API for customers in the system"
+        },
+        {
+            "name": "Providers",
+            "description": "API for Providers in the system"
+        },
+        {
+            "name": "Users",
+            "description": "API for User in the system"
+        },
+        {
+            "name": "Galleries",
+            "description": "API for Galleries in the system"
+        },
+        {
+            "name": "Products",
+            "description": "API for Products in the system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/customers": {
+            "get": {
+                "tags": [
+                    "Customers"
+                ],
+                "summary": "Get all Customers in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Customers"
+                        }
+                    }
+                }
+            }
+        },
+        "/providers": {
+            "get": {
+                "tags": [
+                    "Providers"
+                ],
+                "summary": "Get all Providers in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Providers"
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get all Providers in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Providers"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Customer": {
+            "required": [
+                "name",
+                "_id",
+                "email",
+                "password",
+                "phone",
+                "localization"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "localization": {
+                    "type": "string"
+                }
+            }
+        },
+        "Customers": {
+            "type": "array",
+            "$ref": "#/definitions/Customer"
+        },
+        "Provider": {
+            "required": [
+                "name",
+                "_id",
+                "email",
+                "password",
+                "phone",
+                "localization"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "localization": {
+                    "type": "string"
+                }
+            }
+        },
+        "Providers": {
+            "type": "array",
+            "$ref": "#/definitions/Provider"
+        }
+    }
+}
